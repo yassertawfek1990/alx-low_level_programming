@@ -1,6 +1,12 @@
 #include <stdio.h>
 
-/* C program prints "Programming is like building a multilingual puzzle */
+/** 
+ * main  
+ *
+ * Description: C program prints "Programming is like building a multilingual puzzle"
+ *
+ * Return: Always 0 
+*/
 
 int main(void)
 {
