@@ -4,9 +4,9 @@
 /**
  * main - Enter program
  *
- * Description: C program prints using printf command
+ * Description: prints using write command
  *
- * Return: always return 0
+ * Return: always return 1
 */
 
 int main(void)
