@@ -1,12 +1,13 @@
 #include <stdio.h>
 
-/** 
- * main  
+/**
+ * main - Enter program
  *
- * Description:C program prints using puts command
+ * Description: C program prints using puts command
  *
-:x
+ * Return: always return 0
 */
+
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
