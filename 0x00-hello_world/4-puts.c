@@ -3,11 +3,10 @@
 /** 
  * main  
  *
- * Description: C program prints "Programming is like building a multilingual puzzle"
+ * Description:C program prints using puts command
  *
- * Return: Always 0 
+:x
 */
-
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
