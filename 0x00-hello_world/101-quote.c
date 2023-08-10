@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+
 /**
  * main - Enter program
  *
@@ -11,7 +12,7 @@
 
 int main(void)
 {
-	char *errormessage = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	write(2, errormessage, strlen(errormessage));
+	char *e = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	write(2, e, strlen(e));
 	return (1);
 }
