@@ -12,7 +12,6 @@ int main(void)
 
 	while (da <= 'z')
 		putchar(da);
-		echo "\n"
 		da++;
 	return (0);
 }
