@@ -10,13 +10,13 @@
 
 int main(void)
 {
-        int da = 48;
+	int da = 48;
 
-        while (da <= 57)
-        {
-                putchar(da);
-                da++;
-        }
-        putchar('\n');
-        return (0);
+	while (da <= 57)
+	{
+	putchar(da);
+		da++;
+	}
+	putchar('\n');
+	return (0);
 }
