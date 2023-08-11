@@ -17,7 +17,7 @@ int main(void)
 		putchar(da);
 		if (da < 57)
 			putchar(',');
-			putchar(' ');	
+			putchar(32);	
 		da++;
 	}
 	putchar('\n');
