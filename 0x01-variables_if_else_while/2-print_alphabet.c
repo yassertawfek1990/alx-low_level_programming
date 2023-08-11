@@ -15,6 +15,6 @@ int main(void)
 		putchar(da);
 		da++;
 	}
-	putchar(" ")
+	putchar(32)
 	return (0);
 }
