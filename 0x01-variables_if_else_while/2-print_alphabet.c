@@ -11,9 +11,10 @@ int main(void)
 	char da = 'a';
 
 	while (da <= 'z')
-	{	
+	{
 		putchar(da);
 		da++;
-	}	
+	}
+	putchar(" ")
 	return (0);
 }
