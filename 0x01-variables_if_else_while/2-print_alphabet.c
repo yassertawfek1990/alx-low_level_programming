@@ -15,6 +15,6 @@ int main(void)
 		putchar(da);
 		da++;
 	}
-	putchar(32)
+	putchar(32);
 	return (0);
 }
