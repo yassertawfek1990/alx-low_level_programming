@@ -15,10 +15,10 @@ int main(void)
 
 	while (d1 <= 99)
 	{
-		d1 = d2;
+		d2 = d1;
 		while (d2 <= 99)
 		{
-			if (d1 != d2)
+			if (d2 != d1)
 			{
 				putchar((d1 / 10) + 48);
 				putchar((d1 % 10) + 48);
