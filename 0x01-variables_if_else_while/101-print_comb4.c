@@ -10,20 +10,20 @@
 
 int main(void)
 {
-	int d1 = 48;
+	int d1 = 0;
 	int d2;
 
-	while (d1 <= 57)
+	while (d1 <= 9)
 	{
-		d2 = 48;
-		while (d2 <= 57)
-		{	
+		d2 = 0;
+		while (d2 <= 5)
+		{
 			if (d1 != d2 && d1 < d2)
 			{
-				putchar(d1);
-				putchar(d2);
+				putchar(d1 + 48);
+				putchar(d2 + 48);
 
-				if (d1 != 56 && d2 != 57)
+				if (d1+d2 != 17)
 				{
 					putchar(',');
 					putchar(' ');
