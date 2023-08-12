@@ -32,7 +32,7 @@ int main(void)
 						putchar(' ');
 					}	
 				}
-				d3++
+				d3++;
 			}
 			d2++;
 		}
