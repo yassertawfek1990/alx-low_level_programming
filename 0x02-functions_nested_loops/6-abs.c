@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * __abs - print alphabets if lowercase using asci code
+ * _abs - print alphabets if lowercase using asci code
  * print lowercase alphapet a-z
  *
  * @r: integer
