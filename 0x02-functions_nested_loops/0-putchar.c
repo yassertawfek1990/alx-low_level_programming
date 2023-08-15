@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include "main.h"
+
 /**
  * main - Enter program
  *
- * Description: C program prints using printf command
+ * Description: C program prints using putchar
  *
  * Return: always return 0
 */
 
-int _putchar(void)
+int _putchar(char x)
 {
-	printf("_putchar\n");
-	return (0);
+	return (write(1, %c, 1));
 }
 
 
