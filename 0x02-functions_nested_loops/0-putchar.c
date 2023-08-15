@@ -7,12 +7,12 @@
  *
  * Description: C program prints using putchar
  *
- * Return: always return 0
+ * Return: always return 
 */
 
 int _putchar(char x)
 {
-	return (write(1, %x, 1));
+	return (write(1, &x, 1));
 }
 
 
