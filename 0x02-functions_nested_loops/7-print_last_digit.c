@@ -12,7 +12,8 @@
 int print_last_digit(int r)
 {
 	int d;
-	d = r % 10;
+
+	d = r % 100;
 
 	return (d);
 
