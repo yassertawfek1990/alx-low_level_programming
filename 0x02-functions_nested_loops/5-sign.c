@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_sign - print alphabets if lowercase using asci code
  * print lowercase alphapet a-z
