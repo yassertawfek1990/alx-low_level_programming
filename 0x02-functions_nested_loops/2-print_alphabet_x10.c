@@ -8,6 +8,7 @@
 void print_alphabet_x10(void)
 {
 	int num;
+
 	for (num = 1; num <= 10; num++)
 	{
 		int alph;
