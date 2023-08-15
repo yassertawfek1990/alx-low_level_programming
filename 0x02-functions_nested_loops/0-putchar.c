@@ -1,16 +1,23 @@
-#include <unistd.h>
-#include <stdio.h>
-#include "main.h"
+include "main.h"
 
 /**
  * main - Enter program
  *
- * Description: C program prints using putchar
+ * Description: C program prints using printf command
  *
- * Return: always return
+ * Return: always return 0
 */
 
-int _putchar(char x)
+int main(void)
 {
-	return (write(1, &x, 1));
+	char str[] = "_putchar";
+	int a;
+
+	for (a = 0, a < 8, a++)
+		_putchar(str[]);
+	_putchar("\n");
+
+	return (0);
 }
+
+
