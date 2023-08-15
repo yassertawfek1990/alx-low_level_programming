@@ -3,6 +3,10 @@
 /**
  * _islower - print alphabets if lowercase using asci code
  * print lowercase alphapet a-z
+ *
+ * @c: character
+ *
+ * Return: 1 if lowercase 0 if uppercase
 */
 
 int _islower(int c)
