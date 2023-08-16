@@ -16,7 +16,7 @@ int main(void)
 	float t;
 
 	while (1)
-	{	
+	{
 
 		s = f1 + f2;
 
