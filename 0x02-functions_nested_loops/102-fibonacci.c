@@ -9,13 +9,13 @@
 */
 
 int main(void)
-{ 
+{
 	unsigned long f1 = 0;
 	unsigned long f2 = 1;
 	unsigned long s;
 	int c;
 
-	for ( c = 0; c < 50; c++)
+	for (c = 0; c < 50; c++)
 	{
 		s = f1 + f2;
 		printf("%lu", s);
