@@ -14,13 +14,13 @@ int length(int x)
 
 	if (!x)
 		return (1);
-	while(x)
+	while (x)
 	{
-		x = x/10;
+		x = x / 10;
 		len += 1;
 	}
 
-	return (len)	
+	return (len);
 }
 
 
@@ -34,7 +34,7 @@ int length(int x)
 
 int main(void)
 {
-        int c;
+	int c;
 	int i;
 	unsigned long n1 = 1;
 	unsigned long n2 = 2;
