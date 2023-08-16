@@ -39,6 +39,7 @@ void print_times_table(int n)
 					_putchar((p / 10) + 48);
 
 				_putchar((p % 10) + 48);
+				}
 			}	
 			_putchar('\n');
 		}
