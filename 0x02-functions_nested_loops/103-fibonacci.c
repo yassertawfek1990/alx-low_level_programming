@@ -24,7 +24,7 @@ int main(void)
 			break;
 
 		if ((s % 2) == 0)
-			t += sum;
+			t += s;
 
 		f1 = f2;
 		f2 = s;
