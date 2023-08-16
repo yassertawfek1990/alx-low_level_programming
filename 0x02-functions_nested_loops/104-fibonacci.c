@@ -48,7 +48,7 @@ int main(void)
 	{
 		if (n01 > 0)
 			printf("%lu", n01);
-		i = length(maxi) - 1 - length(n1);
+		i = length(maxi) - length(n1) - 1;
 
 		while (n01 > 0 && i > 0)
 		{
