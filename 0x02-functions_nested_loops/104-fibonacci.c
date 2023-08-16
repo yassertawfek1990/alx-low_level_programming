@@ -47,8 +47,8 @@ int main(void)
 	for (c = 1; c <= 98; c++)
 	{
 		if (n01 > 0)
-			pritf("%lu", n01);
-		i = len(maxi) - 1 - len(n1);
+			printf("%lu", n01);
+		i = length(maxi) - 1 - length(n1);
 
 		while (n01 > 0 && i > 0)
 		{
