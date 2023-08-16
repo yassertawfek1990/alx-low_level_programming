@@ -10,9 +10,9 @@
 
 int main(void)
 { 
-	int f1 = 0;
-	int f2 = 1;
-	int s;
+	unsigned long f1 = 0;
+	unsigned long f2 = 1;
+	unsigned long s;
 	int c;
 
 	for ( c = 0; c < 50; c++)
