@@ -38,7 +38,7 @@ int main(void)
 	int i;
 	unsigned long n1 = 1;
 	unsigned long n2 = 2;
-	unsigned long maxi = 100000000;
+	unsigned long maxi = 1000000000;
 	unsigned long n01 = 0;
 	unsigned long n02 = 0;
 	unsigned long t;
