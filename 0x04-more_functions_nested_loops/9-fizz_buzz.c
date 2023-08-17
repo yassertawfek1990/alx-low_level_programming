@@ -6,8 +6,10 @@
  * Description: C program prints using printf command
 */
 
-void main(int n)
+void fizzBuzz()
 {
+	int n;
+
 	for (n = 1; n <= 100; n++)
 	{
 		if ((n % 3) == 0 && (n % 5) == 0)
