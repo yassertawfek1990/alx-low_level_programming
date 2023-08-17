@@ -4,9 +4,11 @@
  * main - Enter program
  *
  * Description: C program prints using printf command
+ *
+ * Return: always return 0
 */
 
-void fizzBuzz()
+int main(void)
 {
 	int n;
 
