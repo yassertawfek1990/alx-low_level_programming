@@ -6,10 +6,8 @@
  * Description: C program prints using printf command
 */
 
-void main(void)
+void main(int n)
 {
-	int n;
-
 	for (n = 1; n <= 100; n++)
 	{
 		if ((n % 3) == 0 && (n % 5) == 0)
