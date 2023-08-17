@@ -13,5 +13,6 @@ int mul(int a, int b)
 
 	x = a * b
 
-	return (x)
+	return (x);
+
 }
