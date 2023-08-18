@@ -9,8 +9,8 @@
 
 void lpf(long int n)
 {
-	int max;
-	int i;
+	long int max;
+	long int i;
 
 	while (n % 2 == 0)
 		n = n / 2;
@@ -24,7 +24,7 @@ void lpf(long int n)
 	}
 	if (n > 2)
 		max = n;
-	printf("%d\n", max);
+	printf("%ld\n", max);
 }
 
 
