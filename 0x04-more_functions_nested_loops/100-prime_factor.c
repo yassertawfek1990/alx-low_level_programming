@@ -2,28 +2,6 @@
 #include <math.h>
 
 /**
- * sq - returns the largest of 3 numbers
- * @s: n
- * Return: largest number
- */
-
-double sq(double s)
-{
-	double r;
-	int f;
-
-	r = s / 3;
-
-	if (s <= 0)
-		return (0);
-
-	for (f = 0; f < 32; f++)
-		r = (r + s / r) / 2;
-
-	return (r);
-}
-
-/**
  * lpf - returns the largest of 3 numbers
  * @n: n
  * Return: largest number
