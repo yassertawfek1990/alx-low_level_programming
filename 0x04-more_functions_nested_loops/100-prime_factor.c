@@ -7,7 +7,7 @@
  * Return: largest number
  */
 
-void lpf(long long n)
+void lpf(long int n)
 {
 	int max;
 	int i;
