@@ -29,10 +29,10 @@ double sq(double s)
  * Return: largest number
  */
 
-void lpf(long long n)
+void lpf(long int n)
 {
-	long long max;
-	long long i;
+	int max;
+	int i;
 
 	while (n % 2 == 0)
 		n = n / 2;
@@ -40,13 +40,13 @@ void lpf(long long n)
 	{
 		while (n % i == 0)
 		{
-			max = i;
 			n = n / i;
+			max = i;
 		}
 	}
 	if (n > 2)
 		max = n;
-	printf("%lld\n", max);
+	printf("%d\n", max);
 }
 
 
