@@ -2,8 +2,7 @@
 
 /**
  * print_number - returns the largest of 3 numbers
- * @n: first intege
- * Return: largest number
+ * @n: first integer
  */
 
 void print_number(int n)
