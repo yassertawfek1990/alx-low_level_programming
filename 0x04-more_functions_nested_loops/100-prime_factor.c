@@ -1,5 +1,27 @@
 #include "main.h"
-#include <math.h>
+
+
+/**
+ * sq - returns the largest of 3 numbers
+ * @s: n
+ * Return: largest number
+ */
+
+double sq(double s)
+{
+	double r;
+	int f;
+
+	r = s / 3;
+
+	if (s <= 0)
+		return (0);
+
+	for (f = 0; f < 32; f++)
+		r = (r + s / r) / 2;
+
+	return (r);
+}
 
 /**
  * lpf - returns the largest of 3 numbers
@@ -14,7 +36,7 @@ void lpf(long long n)
 
 	while (n % 2 == 0)
 		n = n / 2;
-	for (i = 3; i <= sqrt(n); i = i + 2)
+	for (i = 3; i <= sq(n); i = i + 2)
 	{
 		while (n % i == 0)
 		{
