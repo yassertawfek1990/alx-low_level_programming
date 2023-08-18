@@ -7,10 +7,10 @@
  * Return: largest number
  */
 
-void lpf(long int n)
+void lpf(long long n)
 {
-	int max;
-	int i;
+	long long max;
+	long long i;
 
 	while (n % 2 == 0)
 		n = n / 2;
@@ -24,7 +24,7 @@ void lpf(long int n)
 	}
 	if (n > 2)
 		max = n;
-	printf("%d\n", max);
+	printf("%lld\n", max);
 }
 
 
