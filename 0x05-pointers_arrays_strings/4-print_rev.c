@@ -5,7 +5,7 @@
  * @s: first integ
  */
 
-void print_rev(char *s);
+void print_rev(char *s)
 {
 	int i;
 	int l = strlen(s);
