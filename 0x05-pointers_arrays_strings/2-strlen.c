@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+
 
 /**
  * _strlen - returns the largest of 3 numbers
@@ -14,4 +14,4 @@ int _strlen(char *s)
 	l = strlen(s);
 
 	return (l);
-}	
+}
