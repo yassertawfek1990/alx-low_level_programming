@@ -13,20 +13,23 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 int main(void)
 {
-    char password[6];
+	int len = rand() % 10 + 1; // random length 1-10
+  
+	char password[11];
+  
+	srand(time(NULL));
 
-    srand(time(NULL));
-    
-    password[0] = rand() % 26 + 'A';
-    password[1] = rand() % 26 + 'a';
-    password[2] = rand() % 10 + '0';
-    password[3] = rand() % 26 + 'A';
-    password[4] = rand() % 26 + 'a';
-    password[5] = '\0';
+	for(int i=0; i<len; i++) 
+	{
+		password[i] = rand() % 36 + '!'; // random char
+  	}
 
-    printf("%s", password);
+	password[len] = '\0';
 
-    return (0);
+	printf("%s", password);
+  
+	return (0);
 }
