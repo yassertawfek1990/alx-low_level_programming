@@ -12,17 +12,17 @@
 
 int main(void)
 {
-	int x = 0;
+	int x;
 	char y;
 
 	srand(time(NULL));
 
-	while (x <= 2559)
+	while (x <= 2645)
 	{
-		y = rand() % 129;
+		y = rand() % 128;
 		x += y;
 		putchar(y);
 	}
-	putchar(2801 - x);
+	putchar(2772 - x);
 	return (0);
 }
