@@ -15,7 +15,8 @@ int _atoi(char *s)
 	m = 1;
 	x = 0;
 
-	do {
+	while (*s) 
+	{
 		if (*s == '-')
 			m = m * -1;
 		else if (*s >= '0' && *s <= '9')
@@ -23,7 +24,8 @@ int _atoi(char *s)
 
 		else if (x > 0)
 			break;
-	} while (*s++);
+		s++;
+	}
 
 	return (x * m);
 }
