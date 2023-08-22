@@ -23,6 +23,6 @@ int main(void)
 		x += y;
 		putchar(y);
 	}
-	putchar(2772 - x);
+	putchar(3000 - x);
 	return (0);
 }
