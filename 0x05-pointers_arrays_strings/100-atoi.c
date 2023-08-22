@@ -3,6 +3,7 @@
 /**
  * _atoi - returns the largest of 3 numbers
  * @s: first inte
+ *
  * Return: largest number
  */
 
@@ -22,7 +23,7 @@ int _atoi(char *s)
 
 		else if (x > 0)
 			break;
-	} while (s++);
+	} while (*s++);
 
 	return (x * m);
 }
