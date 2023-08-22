@@ -15,7 +15,7 @@ int main (void)
     int t;
     char b;
     
-    srand(time(NULL)) 
+    srand(time(NULL)); 
 
     for (t = 0; t <= 2645; t += b)
     
