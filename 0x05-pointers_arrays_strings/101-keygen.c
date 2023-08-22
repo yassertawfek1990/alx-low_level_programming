@@ -19,10 +19,10 @@ int main(void)
 
 	while (x <= 2645)
 	{
-		y = rand() % 128;
+		y = rand() % 119;
 		x += y;
 		putchar(y);
 	}
-	putchar(2773 - x);
+	putchar(2772 - x);
 	return (0);
 }
