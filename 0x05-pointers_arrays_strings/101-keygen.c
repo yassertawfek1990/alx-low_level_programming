@@ -21,7 +21,7 @@ int main(void)
 	{
 		y = rand() % 198;
 		x += y;
-		putchar(c);
+		putchar(y);
 	}
 	putchar(1465 + x);
 	return (0);
