@@ -17,12 +17,12 @@ int main(void)
 
 	srand(time(NULL));
 
-	while (x < 3198)
+	while (x < 2198)
 	{
 		y = rand() % 198;
 		x += y;
 		putchar(y);
 	}
-	putchar(1465 + x);
+	putchar(500 + x);
 	return (0);
 }
