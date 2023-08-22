@@ -17,9 +17,9 @@ int main(void)
 
 	srand(time(NULL));
 
-	while (x < 2198)
+	while (x < 2559)
 	{
-		y = rand() % 62;
+		y = rand() % 129;
 		x += y;
 
 		if (y < 26)
@@ -29,6 +29,6 @@ int main(void)
 		else
 			putchar('o' + y - 52);
 	}
-	putchar(500 + x);
+	putchar(2801 - x);
 	return (0);
 }
