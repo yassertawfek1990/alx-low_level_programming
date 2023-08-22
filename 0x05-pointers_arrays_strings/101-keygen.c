@@ -22,11 +22,12 @@ int main(void)
 
 	srand(time(NULL));
 
-	while (sum < 2772) {
-	int ascii = rand() % 94 + 33;
+	while (sum < 2772) 
+	{
+		int ascii = rand() % 94 + 33;
 
-	sum += ascii;
-	password[len++] = ascii;
+		sum += ascii;
+		password[len++] = ascii;
 	}
 
 	password[len] = '\0';
