@@ -17,17 +17,11 @@ int main(void)
 
 	srand(time(NULL));
 
-	while (x < 2559)
+	while (x <= 2559)
 	{
 		y = rand() % 129;
 		x += y;
-
-		if (y < 26)
-			putchar('a' + y);
-		else if (y <52)
-			putchar('A' + y - 26);
-		else
-			putchar('o' + y - 52);
+		putchar(y);
 	}
 	putchar(2801 - x);
 	return (0);
