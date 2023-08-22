@@ -22,7 +22,9 @@ int main(void)
   
 	srand(time(NULL));
 
-	for (int i=0; i<len; i++)
+	int i;
+
+	for (i = 0; i < len; i++)
 	{
 		password[i] = rand() % 36 + '!'; 
   	}
