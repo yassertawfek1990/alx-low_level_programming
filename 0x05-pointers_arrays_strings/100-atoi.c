@@ -23,9 +23,8 @@ int _atoi(char *s)
 
 		else if (x > 0)
 			break;
+		s++;
 	}
-	s++;
-
 
 	return (x * m);
 }
