@@ -19,9 +19,15 @@ int main(void)
 
 	while (x < 2198)
 	{
-		y = rand() % 198;
+		y = rand() % 62;
 		x += y;
-		putchar(y);
+
+		if (y < 26)
+			putchar('a' + y);
+		else if (y <52)
+			putchar('A' + y - 26);
+		else
+			putchar('o' + y - 52);
 	}
 	putchar(500 + x);
 	return (0);
