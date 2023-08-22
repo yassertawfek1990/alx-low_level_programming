@@ -16,13 +16,13 @@
 
 int main(void)
 {
-	int len = rand() % 10 + 1;
-  
+	int len, i;
+	
+	len = rand() % 10 + 1;
+  	
 	char password[11];
   
 	srand(time(NULL));
-
-	int i;
 
 	for (i = 0; i < len; i++)
 	{
