@@ -16,7 +16,7 @@
 
 int main(void)
 {
-	int len = rand() % 10 + 1; // random length 1-10
+	int len = rand() % 10 + 1;
   
 	char password[11];
   
@@ -24,7 +24,7 @@ int main(void)
 
 	for(int i=0; i<len; i++) 
 	{
-		password[i] = rand() % 36 + '!'; // random char
+		password[i] = rand() % 36 + '!'; 
   	}
 
 	password[len] = '\0';
