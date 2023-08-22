@@ -20,7 +20,7 @@ int main (void)
     for (t = 0; t <= 2645; t += b)
     
     {
-        b = ran() % 128;
+        b = rand() % 128;
         putchar(b);
     }
 
