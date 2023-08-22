@@ -17,10 +17,10 @@
 int main(void)
 {
 	int len, i;
-	
-	len = rand() % 10 + 1;
   	
 	char password[11];
+
+	len = rand() % 10 + 1;
   
 	srand(time(NULL));
 
