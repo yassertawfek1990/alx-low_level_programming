@@ -16,22 +16,22 @@
 
 int main(void)
 {
-  int sum = 0;
-  int len = 0;
-  char password[20];
+	int sum = 0;
+	int len = 0;
+	char password[20];
 
-  srand(time(NULL));
+	srand(time(NULL));
 
-  while (sum < 2772) {
-    int ascii = rand() % 94 + 33; // random printable ASCII 
+	while (sum < 2772) {
+	int ascii = rand() % 94 + 33;
 
-    sum += ascii;
-    password[len++] = ascii;
-  }
+	sum += ascii;
+	password[len++] = ascii;
+	}
 
-  password[len] = '\0';
+	password[len] = '\0';
 
-  printf("%s", password);
+	printf("%s", password);
 
-  return (0); 
+	return (0); 
 }
