@@ -22,7 +22,7 @@ int _atoi(char *s)
 
 		else if (x > 0)
 			break;
-	} while s++;
+	} while (s++);
 
 	return (x * m);
 }
