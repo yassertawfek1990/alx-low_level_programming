@@ -10,10 +10,6 @@
  * Return: always return 0
 */
 
-#include <stdlib.h>
-#include <time.h>
-
-
 int main(void)
 {
 	int sum = 0;
@@ -22,17 +18,25 @@ int main(void)
 
 	srand(time(NULL));
 
-	while (sum < 2772) 
+	while (len < 20) 
 	{
-		int ascii = rand() % 94 + 33;
+		if (sum > 2700)
+			break;
 
-		sum += ascii;
-		password[len++] = ascii;
+		int r = rand() % 94 + 33;
+		sum += r;
+		password[len++] = r;
+	}
+
+	int remaining = 2772 - sum;
+	if (remaining < 127) 
+	{
+		password[len++] = remaining;
 	}
 
 	password[len] = '\0';
 
 	printf("%s", password);
 
-	return (0); 
+	return 0;
 }
