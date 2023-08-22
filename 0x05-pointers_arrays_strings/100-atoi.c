@@ -2,7 +2,7 @@
 
 /**
  * _atoi - returns the largest of 3 numbers
- * @*s: first inte
+ * @s: first inte
  * Return: largest number
  */
 
@@ -17,7 +17,7 @@ int _atoi(char *s)
 	while (*s)
 	{
 		if (*s == '-')
-			m = -1;
+			m = m * -1;
 		else if (*s >= '0' && *s <= '9')
 			x = x * 10 + (*s - '0');
 
