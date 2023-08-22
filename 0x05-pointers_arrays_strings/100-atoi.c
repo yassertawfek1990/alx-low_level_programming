@@ -22,7 +22,7 @@ int _atoi(char *s)
 		else if (*s >= 48 && *s <= 57)
 			x = x * 10 + (*s - 48);
 
-		else
+		else if (x > 0)
 			break;
 		s++;
 	}
