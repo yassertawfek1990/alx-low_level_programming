@@ -10,35 +10,32 @@
  * Return: always return 0
 */
 
-int main(void)
-{
-	int r;
-	int remaining;
-	int sum = 0;
-	int len = 0;
-	char password[20];
+int main(void) {
 
-	srand(time(NULL));
+	int r, sum;
+	char password;
+  sum = 0, len = 0;
+  password[100];
 
-	while (len < 20) 
-	{
-		if (sum > 2700)
-			break;
+  srand(time(NULL)); 
 
-		r = rand() % 94 + 33;
-		sum += r;
-		password[len++] = r;
-	}
+  while (sum < 2772) {
+    r = rand() % 94 + 33;
 
-	remaining = 2772 - sum;
-	if (remaining < 127) 
-	{
-		password[len++] = remaining;
-	}
+    sum += r;
+    password[len++] = r;
 
-	password[len] = '\0';
+    if (sum > 2700) 
+      break; 
+  }
 
-	printf("%s", password);
+  if (2772 - sum < 127) {
+    password[len++] = 2772 - sum; 
+  }
 
-	return 0;
+  password[len] = '\0';
+
+  printf("%s", password);
+
+  return 0;
 }
