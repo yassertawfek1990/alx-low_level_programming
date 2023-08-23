@@ -4,7 +4,7 @@
  * _strncat - returns the largest of 3 numbers
  * @src: first integer
  * @dest: second integer
- * @a: d
+ * @n: d
  * Return: largest number
  */
 
