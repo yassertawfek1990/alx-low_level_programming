@@ -23,7 +23,7 @@ char *leet(char *str)
 			{
 				if (str[i] == d[x] || str[i] == d[x] - 32)
 				{
-					str[i] = a[i] + 4;
+					str[i] = a[x] + 48;
 				}
 			}
 		}
