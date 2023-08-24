@@ -8,7 +8,7 @@
 
 char *leet(char *str)
 {
-	unsigned int i;
+	int i;
 	int x;
 
 	char d[] = {'a', 'e', 'o', 't', 'l'};
