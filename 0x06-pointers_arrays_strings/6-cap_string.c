@@ -15,13 +15,16 @@ char *cap_string(char *str)
 
 	for (i = 0; i < l && str[i] != '\0'; i++)
 	{
-		for (x = 0; x <= 12; x++)
+		if (str[i + 1] != '\0')
 		{
-			if (str[i] == d[x])
+			for (x = 0; x <= 12; x++)
 			{
-				if (str[i + 1] >= 97 && str[i + 1] <= 122)
+				if (str[i] == d[x])
 				{
-					str[i + 1] = (65 + (str[i + 1] - 97));
+					if (str[i + 1] >= 97 && str[i + 1] <= 122)
+					{
+						str[i + 1] = (65 + (str[i + 1] - 97));
+					}
 				}
 			}
 		}
