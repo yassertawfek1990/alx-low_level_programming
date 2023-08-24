@@ -11,8 +11,8 @@ char *leet(char *str)
 	int i;
 	int x;
 
-	char d[] = {"a", "e", "o", "t", "l"};
-	int a[] = {4. 3, 0, 7, 1};
+	char d[] = {'a', 'e', 'o', 't', 'l'};
+	int a[] = {4, 3, 0, 7, 1};
 	int l = strlen(str);
 
 	for (i = 0; i < l && str[i] != '\0'; i++)
