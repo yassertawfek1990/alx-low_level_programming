@@ -6,28 +6,24 @@
  * Return: largest number
  */
 
-char *cap_string(char *str)
+char *cap_string(char *str) 
 {
-	int i;
-	int x;
-	char d[] = " \t\n,;.!?\"(){}";
-	int l = strlen(str);
+  int i;
+  int len = strlen(str);
+  
+  for (i = 0; i < len; i++) {
+    if (i == 0 || str[i-1] == ' ' ||
+        str[i-1] == '\t' || str[i-1] == '\n' ||
+        str[i-1] == ',' || str[i-1] == ';' ||
+        str[i-1] == '.' || str[i-1] == '!' ||
+        str[i-1] == '?' || str[i-1] == '"' ||
+        str[i-1] == '(' || str[i-1] == ')' ||
+        str[i-1] == '{' || str[i-1] == '}') {
+      str[i] = toupper(str[i]);
+    } else {
+      str[i] = tolower(str[i]); 
+    }
+  }
 
-	for (i = 0; i < l && str[i] != '\0'; i++)
-	{
-		if (str[i + 1] != '\0')
-		{
-			for (x = 0; x <= 12; x++)
-			{
-				if (str[i] == d[x])
-				{
-					if (str[i + 1] >= 97 && str[i + 1] <= 122)
-					{
-						str[i + 1] = (65 + (str[i + 1] - 97));
-					}
-				}
-			}
-		}
-	}
-	return (str);
+  return str;
 }
