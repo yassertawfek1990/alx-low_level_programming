@@ -17,14 +17,11 @@ char *leet(char *str)
 
 	for (i = 0; i < l && str[i] != '\0'; i++)
 	{
-		if (str[i + 1] != '\0')
+		for (x = 0; x <= 4; x++)
 		{
-			for (x = 0; x <= 4; x++)
+			if (str[i] == d[x] || str[i] == d[x] - 32)
 			{
-				if (str[i] == d[x] || str[i] == d[x] - 32)
-				{
-					str[i] = a[x] + 48;
-				}
+				str[i] = a[x] + 48;
 			}
 		}
 	}
