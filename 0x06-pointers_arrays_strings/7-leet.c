@@ -9,7 +9,7 @@
 char *leet(char *str)
 {
 	int i;
-	int x;
+	unsigned int x;
 
 	char d[] = {'a', 'e', 'o', 't', 'l'};
 	int a[] = {4, 3, 0, 7, 1};
