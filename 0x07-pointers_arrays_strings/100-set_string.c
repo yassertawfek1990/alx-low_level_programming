@@ -3,7 +3,7 @@
 /**
  * set_string - returns the largest of 3 numbers
  * @s: first intege
- * to: d
+ * @to: d
  * Return: largest number
  */
 
