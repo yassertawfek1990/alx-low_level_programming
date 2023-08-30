@@ -7,7 +7,7 @@
  */
 int is_prime_number(int n)
 {
-	return (pr(int n, 2));
+	return (pr(n, 2));
 }
 /**
  * pr - returns the largest of 3 numbers
