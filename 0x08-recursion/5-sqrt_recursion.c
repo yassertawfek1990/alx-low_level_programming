@@ -5,7 +5,6 @@
  * @n: first intege
  * Return: largest number
  */
-
 int _sqrt_recursion(int n)
 {
 	int x;
@@ -14,7 +13,12 @@ int _sqrt_recursion(int n)
 
 	return (sq(n, x));
 }
-
+/**
+ * sq - returns the largest of 3 numbers
+ * @n: first intege
+ * @x: d
+ * Return: largest number
+ */
 int sq(int n, int x)
 {
 	if (x * x == n)
