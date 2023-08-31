@@ -69,4 +69,6 @@ int _sqrt_recursion(int n);
 int sq(int n, int x);
 int is_prime_number(int n);
 int pr(int n, int x);
+int is_palindrome(char *s);
+
 #endif
