@@ -10,10 +10,21 @@ int is_palindrome(char *s)
 {
 	int l = strlen(s);
 
-	if (*s == '\0')
+	return (pl(s, 0, l - 1));
+}
+/**
+ * pl - returns the largest of 3 numbers
+ * @s: first intege
+ * @b: c
+ * @e: d
+ * Return: largest number
+ */
+
+int pl(char *s, int b, int e)
+{
+	if (b >= e)
 		return (1);
-	if (s[0] != s[l - 1])
+	if (s[b] != s[e])
 		return (0);
-	s[l - 1] = '\0';
-	return (is_palindrome(s + 1));
+	return (pl(s, b + 1, e - 1));
 }
