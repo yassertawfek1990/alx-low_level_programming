@@ -7,7 +7,7 @@
  * Return: largest number
  */
 
-int wildcmp(char *s1, char *s2, int i, int j) {
+int wild(char *s1, char *s2, int i, int j) {
 
   // Base cases
   if (s2[j] == '\0')
@@ -18,10 +18,10 @@ int wildcmp(char *s1, char *s2, int i, int j) {
 
   // Handle '*' wildcard
   if (s2[j] == '*') {
-    if (s1[i] == s2[j-1] && wildcmp(s1, s2, i+1, j))
+    if (s1[i] == s2[j-1] && wild(s1, s2, i+1, j))
       return 1;
     
-    if (s1[i+1] == s2[j+1] && wildcmp(s1, s2, i, j+1))
+    if (s1[i+1] == s2[j+1] && wild(s1, s2, i, j+1))
       return 1; 
   }
 
@@ -30,10 +30,10 @@ int wildcmp(char *s1, char *s2, int i, int j) {
     return 0;
 
   // Recurse on remainder
-  return wildcmp(s1, s2, i+1, j+1); 
+  return wild(s1, s2, i+1, j+1); 
 }
 
 
 int wildcmp(char *s1, char *s2) {
-  return wildcmp(s1, s2, 0, 0); 
+  return wild(s1, s2, 0, 0); 
 }

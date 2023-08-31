@@ -72,5 +72,5 @@ int pr(int n, int x);
 int is_palindrome(char *s);
 int pl(char *s, int start, int end);
 int wildcmp(char *s1, char *s2);
-
+int wild(char *s1, char *s2, int i, int j);
 #endif
