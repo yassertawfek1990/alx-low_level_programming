@@ -23,12 +23,14 @@ int main(int argc, char *argv[])
 
 	for (x = 0; x < 5; x++)
 	{
-		if (m >= c[i])
+		if (m >= c[x])
 		{
-			l = l + m / c[x];
+			l = l + (m / c[x]);
 			m = m % c[x];
 			if (m % c[x] == 0)
+			{
 				break;
+			}
 		}
 	}
 	printf("%d\n", l);
