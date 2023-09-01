@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  * main - Enter program
@@ -12,5 +11,19 @@
 
 int main(int argc, char *argv[])
 {
+	int t;
+	char *p;
+
+	t = 0;
+
+	while (--argc)
+	{
+		for (c = argv[argc]; *c; c++)
+			if (*c < 48 || *c > 57)
+				printf("Error\n");
+				return (1);
+		t = t + atoi(argv[argc]);
+	}
+	printf("%d\n", t);
 	return (0);
 }
