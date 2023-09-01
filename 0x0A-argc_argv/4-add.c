@@ -20,8 +20,7 @@ int main(int argc, char *argv[])
 	{
 		for (p = argv[argc]; *p; p++)
 			if (*p < 48 || *p > 57)
-				printf("Error\n");
-				return (1);
+				return (printf("Error\n"),1);
 		t = t + atoi(argv[argc]);
 	}
 	printf("%d\n", t);
