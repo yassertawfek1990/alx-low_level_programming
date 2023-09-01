@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
 
 	while (--argc)
 	{
-		for (c = argv[argc]; *c; c++)
+		for (p = argv[argp]; *p; p++)
 			if (*c < 48 || *c > 57)
 				printf("Error\n");
 				return (1);
-		t = t + atoi(argv[argc]);
+		t = t + atoi(argv[argp]);
 	}
 	printf("%d\n", t);
 	return (0);
