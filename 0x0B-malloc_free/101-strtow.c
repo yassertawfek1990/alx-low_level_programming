@@ -4,7 +4,7 @@
  * @str: first intege
  * Return: largest number
  */
-char **strtow(char* str)
+char **strtow(char *str)
 {
 	int q, z, e, r, y = 0, u = 0;
 	char **p;
@@ -14,7 +14,7 @@ char **strtow(char* str)
 	y = d(str);
 	if (y == 1)
 		return (NULL);
-	p = (char**)malloc(y * sizeof(char*));
+	p = (char **)malloc(y * sizeof(char*));
 	if (p == NULL)
 		return (NULL);
 	p[y - 1] = NULL;
@@ -30,7 +30,7 @@ char **strtow(char* str)
 			z--;
 			if (p[u] == NULL)
 			{
-				for (e = 0; e < u; e++)	
+				for (e = 0; e < u; e++)
 					free(p[e]);
 				free(p[y - 1]);
 				free(p);
