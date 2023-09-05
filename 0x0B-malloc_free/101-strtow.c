@@ -14,6 +14,9 @@ char **strtow(char* str)
 	int u;
 	char **p;
 
+	y = 0;
+	u = 0;
+
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	y = d(str);
