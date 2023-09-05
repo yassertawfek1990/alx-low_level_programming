@@ -2,16 +2,16 @@
 
 char** strtow(char* str) {
 
-	int num_words, word_idx;
+	int num_words, i, word_idx;
 	char ** words;
-	char* word
+	char* word;
 
   if (str == NULL || *str == '\0') {
     return NULL;
   }
 
   num_words = 0;
-  int i;
+  
   for (i = 0; str[i]; i++) {
     if (str[i] == ' ' && str[i+1] != '\0') {
       num_words++;
