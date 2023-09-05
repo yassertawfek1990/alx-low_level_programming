@@ -14,7 +14,7 @@ char **strtow(char *str)
 	y = d(str);
 	if (y == 1)
 		return (NULL);
-	p = (char **)malloc(y * sizeof(char*));
+	p = (char **)malloc(y * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
 	p[y - 1] = NULL;
