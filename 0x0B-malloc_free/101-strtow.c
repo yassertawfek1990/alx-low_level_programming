@@ -6,11 +6,8 @@
  */
 char **strtow(char* str)
 {
-	int q, z, e, r, y, u;
+	int q, z, e, r, y = 0, u = 0;
 	char **p;
-
-	y = 0;
-	u = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
