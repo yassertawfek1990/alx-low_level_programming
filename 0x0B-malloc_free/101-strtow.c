@@ -10,7 +10,6 @@ char **strtow(char* str)
 	int z;
 	int e;
 	int r;
-	int t;
 	int y;
 	int u;
 	char **p;
@@ -74,6 +73,6 @@ int d(char *a)
 		else if (v == 0)
 			b++;
 	}
-	b++
+	b++;
 	return (b);
 }
