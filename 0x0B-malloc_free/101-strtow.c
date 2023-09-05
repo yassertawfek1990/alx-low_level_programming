@@ -2,11 +2,15 @@
 
 char** strtow(char* str) {
 
+	int num_words, word_idx;
+	char ** words;
+	char* word
+
   if (str == NULL || *str == '\0') {
     return NULL;
   }
 
-  int num_words = 0;
+  num_words = 0;
   int i;
   for (i = 0; str[i]; i++) {
     if (str[i] == ' ' && str[i+1] != '\0') {
@@ -19,14 +23,14 @@ char** strtow(char* str) {
 
   num_words++;
 
-  char** words = malloc(sizeof(char*) * (num_words + 1));
+  words = malloc(sizeof(char*) * (num_words + 1));
   if (!words) {
     return NULL;
   }
 
   i = 0;
-  int word_idx = 0;
-  char* word = strtok(str, " ");
+  word_idx = 0;
+  word = strtok(str, " ");
   while (word != NULL) {
     words[word_idx] = strdup(word);
     if (!words[word_idx]) {
