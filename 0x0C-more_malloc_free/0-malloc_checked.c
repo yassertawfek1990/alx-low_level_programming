@@ -2,8 +2,8 @@
 #include "main.h"
 
 /**
- * print_number - returns the largest of 3 numbers
- * @n: first intege
+ * malloc_checked - returns the largest of 3 numbers
+ * @b: first intege
  * Return: largest number
  */
 
