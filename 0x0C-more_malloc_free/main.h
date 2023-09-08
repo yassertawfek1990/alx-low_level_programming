@@ -48,6 +48,8 @@ int ra(const char *c);
 int _isdigit(int c);
 int _strlen(char *s);
 char *big_multiply(char *s1, char *s2);
+char *mb(char *v1, char *v2);
+int id(int u);
 
 
 #endif
