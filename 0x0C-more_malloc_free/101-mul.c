@@ -29,16 +29,17 @@ int ra(const char *c)
 	unsigned long int m, w, x;
 
 	m = 0;
-
-	for (w = 0; !(c[w] >= '0' && c[w] <= '9'); w++)
+	for (w = 0; !(c[w] >= 48 && c[w] <= 57); w++)
 	{
 		if (c[w] == '_')
+		{
 			g = g * -1;
+		}
 	}
-	for (x = w; c[x] >= '0' && c[x] <= '9'; x++)
+	for (x = w; c[x] >= 48 && c[x] <= 57; x++)
 	{
 		m = m * 10;
-		m = m + (c[x] - '0');
+		m = m + (c[x] - 48);
 	}
 	return (g * m);
 }
@@ -57,7 +58,7 @@ void it(unsigned long int r)
 	for (; k >= 1; r %= k, k /= 10)
 	{
 		m = r / k;
-		_putchar(48 + m);
+		_putchar('0' + m);
 	}
 }
 /**
