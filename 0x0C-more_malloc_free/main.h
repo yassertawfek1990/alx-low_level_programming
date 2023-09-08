@@ -42,6 +42,9 @@ int is_digit(char *str);
 int string_to_int(char *str);
 int multiply(int a, int b);
 void print_int(int n);
+void t(char *f);
+void *it(unsigned long int r);
+int ra(const char *c);
 
 #endif
 

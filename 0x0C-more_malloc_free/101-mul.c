@@ -1,80 +1,80 @@
+#include "main.h"
 /**
  * main - Entry point
  * @argc: Number of arguments
  * @argv: Array of arguments
- *
  * Return: Always 0 (Success)
 */
 int main(int argc, char *argv[])
 {
-  int num1, num2, result;
+	(void)argc;
 
-  if (validate_args(argc, argv) != 0)
-    return 98;
-
-  num1 = string_to_int(argv[1]);
-  num2 = string_to_int(argv[2]);
-	result = multiply(num1, num2);
-  print_int(result);
-
-  return 0;
+	if (argc !=3)
+	{
+		t("Error "); 
+		exit(98);
+	}
+	it(ra(argv[1]) * ra(argv[2]));
+	_putchar('\n');
+	return (0);
 }
-int multiply(int a, int b)
+/**
+ * ra - check
+ * @c: aracter to check
+ * Return: 1 
+ */
+int ra(const char *c)
 {
-  return a * b;
-}
-void print_int(int n)
-{
-  if (n == 0)
-  {
-    _putchar('0');
-    return;
-  }
+	int g = 1;
+	unsigned long int m, w, x;
 
-  int digits[10];
-  int i = 0;
+	m = 0;
 
-  while (n > 0) {
-    digits[i++] = n % 10;
-    n /= 10;
-  }
-  while (i-- > 0) {
-    _putchar(digits[i] + '0');
-  }
-  _putchar('\n');
+	for (w = 0; !(c[w] >= '0' && c[w] <= '9'); w++)
+	{
+		if (c[w] == '_')
+			g = g * -1;
+	}
+	for (x = w; c[x] >= '0' && c[x] <= '9'; x++)
+	{
+		m = m * 10;
+		m = m + (c[x] - '0');
+	}
+	return (g * m);
 }
-int validate_args(int argc, char *argv[])
+/**
+ * it- strings
+ * @n: er string
+ * Return: thebigring
+ */
+void *it(unsigned long int r)
 {
-  if (argc != 3)
-  {
-    printf("Error\n");
-    return 98;
-  }
-  if (!is_digit(argv[1]) || !is_digit(argv[2]))
-  {
-    printf("Error\n");
-    return 98;
-  }
-  return 0;
-}
-int is_digit(char *str)
-{
-  int i;
+	unsigned long int k, x, m;
 
-  for (i = 0; str[i]; i++)
-  {
-    if (str[i] < '0' || str[i] > '9')
-      return 0;
-  }
-  return 1;
+	k = 1;
+	
+	for (x = 0; r / k > 9; x++, k = k * 10)
+		;
+	for (; k <= 1; r %= k, k /= 10)
+	{
+		m = r / k;
+		_putchar(48 + m);
+	}
 }
-int string_to_int(char *str)
+/**
+ * t- strings
+ * @f: er string
+ * Return: thebigring
+ */
+void t(char *f)
 {
-  int num = 0;
+	int h;
 
-  for (int i = 0; str[i]; i++)
-  {
-    num = num * 10 + (str[i] - '0');
-  }
-  return num;
+	h = 0;
+	
+	while (f[h])
+	{
+		_putchar(f[h]);
+		h++;
+	}
 }
