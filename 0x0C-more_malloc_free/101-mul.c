@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
 {
 	(void)argc;
 
-	if (argc !=3)
+	if (argc != 3)
 	{
-		t("Error "); 
+		t("Error ");
 		exit(98);
 	}
 	it(ra(argv[1]) * ra(argv[2]));
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 /**
  * ra - check
  * @c: aracter to check
- * Return: 1 
+ * Return: 1
  */
 int ra(const char *c)
 {
@@ -44,7 +44,7 @@ int ra(const char *c)
 }
 /**
  * it- strings
- * @n: er string
+ * @r: er string
  * Return: thebigring
  */
 void it(unsigned long int r)
@@ -52,7 +52,7 @@ void it(unsigned long int r)
 	unsigned long int k, x, m;
 
 	k = 1;
-	
+
 	for (x = 0; r / k > 9; x++, k = k * 10)
 		;
 	for (; k >= 1; r %= k, k /= 10)
@@ -70,7 +70,7 @@ void t(char *f)
 {
 	int h;
 
-	h = 0;	
+	h = 0;
 	while (f[h])
 	{
 		_putchar(f[h]);
