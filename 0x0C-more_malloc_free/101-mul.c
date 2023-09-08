@@ -70,8 +70,7 @@ void t(char *f)
 {
 	int h;
 
-	h = 0;
-	
+	h = 0;	
 	while (f[h])
 	{
 		_putchar(f[h]);
