@@ -45,6 +45,10 @@ void print_int(int n);
 void t(char *f);
 void it(unsigned long int r);
 int ra(const char *c);
+int _isdigit(int c);
+int _strlen(char *s);
+char *big_multiply(char *s1, char *s2);
+
 
 #endif
 
