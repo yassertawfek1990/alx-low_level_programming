@@ -57,7 +57,12 @@ char *mb(char *v1, char *v2)
 	return (b);
 }
 
-
+/**
+ * main - multiply two big number strings
+ * @argc: the of arguments
+ * @argv: the argumen
+ * Return: Alwccess.
+ */
 
 int main(int argc, char **argv)
 {
@@ -68,6 +73,7 @@ int main(int argc, char **argv)
 		printf("Error\n"), exit(98);
 
 	e = strlen(argv[1]) + strlen(argv[2]);
+	/* Memory barrier */
 	t = mb(argv[1], argv[2]);
 	w = 0;
 	q = 0;
