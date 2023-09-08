@@ -47,7 +47,7 @@ int ra(const char *c)
  * @n: er string
  * Return: thebigring
  */
-void *it(unsigned long int r)
+void it(unsigned long int r)
 {
 	unsigned long int k, x, m;
 
@@ -55,7 +55,7 @@ void *it(unsigned long int r)
 	
 	for (x = 0; r / k > 9; x++, k = k * 10)
 		;
-	for (; k <= 1; r %= k, k /= 10)
+	for (; k >= 1; r %= k, k /= 10)
 	{
 		m = r / k;
 		_putchar(48 + m);
