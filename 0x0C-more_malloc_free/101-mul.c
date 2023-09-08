@@ -33,13 +33,13 @@ int ra(const char *c)
 	{
 		if (c[w] == '_')
 		{
-			g = g * -1;
+			g *= -1;
 		}
 	}
 	for (x = w; c[x] >= 48 && c[x] <= 57; x++)
 	{
-		m = m * 10;
-		m = m + (c[x] - 48);
+		m *= 10;
+		m += (c[x] - 48);
 	}
 	return (g * m);
 }
@@ -53,7 +53,7 @@ void it(unsigned long int r)
 	unsigned long int k, x, m;
 
 	k = 1;
-	for (x = 0; r / k > 9; x++, k = k * 10)
+	for (x = 0; (r / k) > 9; x++, k *= 10)
 	;
 	for (; k >= 1; r %= k, k /= 10)
 	{
