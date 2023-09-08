@@ -6,7 +6,7 @@
  */
 int id(int u)
 {
-	return (c >= 48 && c <= 57);
+	return (u >= 48 && u <= 57);
 }
 /**
  * mb - mulmber strings
@@ -21,10 +21,10 @@ char *mb(char *v1, char *v2)
 
 	j1 = strlen(v1);
 	j2 = strlen(v2);
-	r = malloc(d = h = j1 + j2);
+	b = malloc(d = h = j1 + j2);
 	if (!b)
 		printf("Error\n"), exit(98);
-	while (a--)
+	while (d--)
 		b[d] = 0;
 
 	for (j1--; j1 >= 0; j1--)
@@ -46,7 +46,7 @@ char *mb(char *v1, char *v2)
 			}
 			f = v2[j2] - 48;
 
-			g += r[j1 + j2 + 1] + (d * f);
+			g += b[j1 + j2 + 1] + (d * f);
 			b[j1 + j2 + 1] = g % 10;
 
 			g /= 10;
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 
-	e = strlen(argv[1]) + _strlen(argv[2]);
+	e = strlen(argv[1]) + strlen(argv[2]);
 	t = mb(argv[1], argv[2]);
 	w = 0;
 	q = 0;
