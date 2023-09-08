@@ -76,6 +76,7 @@ int main(int argc, char **argv)
 {
 	char *r;
 	int a, c, x;
+
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 
