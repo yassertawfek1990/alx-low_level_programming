@@ -52,9 +52,8 @@ void it(unsigned long int r)
 	unsigned long int k, x, m;
 
 	k = 1;
-
 	for (x = 0; r / k > 9; x++, k = k * 10)
-		;
+	;
 	for (; k >= 1; r %= k, k /= 10)
 	{
 		m = r / k;
