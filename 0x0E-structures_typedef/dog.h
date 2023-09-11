@@ -1,5 +1,5 @@
-#ifndef _DOG_H
-#define _DOG_H
+#ifndef DOG_H
+#define DOG_H
 
 /**
  * struct dog - returns the largest of 3 numbers
@@ -19,4 +19,4 @@ struct dog
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 
-#endif /* _DOG_H */
+#endif
