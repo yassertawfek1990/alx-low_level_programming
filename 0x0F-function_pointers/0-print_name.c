@@ -1,8 +1,9 @@
 #include "function_pointers.h"
 
 /**
- * print_number - returns the largest of 3 numbers
- * @n: first intege
+ * print_name - returns the largest of 3 numbers
+ * @name: first intege
+ * @f: c 
  * Return: largest number
  */
 
