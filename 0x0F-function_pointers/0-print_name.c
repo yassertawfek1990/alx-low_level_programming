@@ -3,7 +3,7 @@
 /**
  * print_name - returns the largest of 3 numbers
  * @name: first intege
- * @f: c 
+ * @f: c
  * Return: largest number
  */
 
