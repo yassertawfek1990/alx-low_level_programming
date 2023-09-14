@@ -1,48 +1,64 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - returns the largest of 3 numbers
- * @format: df
- * Return: largest number
+ * g - returns the largest of 3 numbers
+ * @s: df
+ * @a: first integ
  */
-
-void print_all(const char * const format, ...)
+void g(char *s, va_list a)
 {
-  va_list args;
-  va_start(args, format);
-  
-  int i = 0;
-  char *s;
-  
-  while (format[i] != '\0') {
-    switch(format[i]) {
-      case 'c':
-        printf("%c", va_arg(args, int));
-        break;
-      case 'i':
-        printf("%d", va_arg(args, int));
-        break;
-      case 'f':
-        printf("%f", va_arg(args, double));
-        break;
-      case 's':
-        s = va_arg(args, char*);
-        if (s == NULL) {
-          printf("(nil)");
-        } else {
-          printf("%s", s); 
-        }
-        break;
-    }
-    
-    if (format[i + 1] != '\0') {
-      printf(", ");
-    }
-    
-    i++;
-  }
-  
-  printf("\n");
-  
-  va_end(args);
+	char *q =  va_arg(a, char *);
+
+	switch ((int)(!q))
+		case 1:
+			q = "(nil)";
+	printf("%s%s", s, q)
+}
+/**
+ * f - returns the largest of 3 numbers
+ * @s: df
+ * @a: first integ
+ */
+void f(char *s, va_list a)
+{
+	printf("%s%f", s, va_arg(a, double))
+}
+/**
+ * c - returns the largest of 3 numbers
+ * @s: df
+ * @a: first integ
+ */
+void c(char *s, va_list a)
+{
+	printf("%s%c", s, va_arg(a, int))
+}
+/**
+ * i - returns the largest of 3 numbers
+ * @s: df
+ * @a: first integ
+ */
+void i(char *s, va_list a)
+{
+	printf("%s%d", s, va_arg(a, int))
+}
+void print_strings(const char *separator, const unsigned int n, ...)
+{
+	int x;
+	char *d;
+	va_list a;
+
+	x = n;
+
+	if (!n)
+	{
+		printf("\n");
+		return;
+	}
+	va_start(a, n);
+	while (x--)
+	{
+		printf("%s%s", (d = va_arg(a, char *)) ? d : "(nil)",
+			x ? (separator ? separator : "") : "\n");
+	}
+	va_end(a);
 }
