@@ -12,7 +12,7 @@ void g(char *s, va_list a)
 	switch ((int)(!q))
 		case 1:
 			q = "(nil)";
-	printf("%s%s", s, q)
+	printf("%s%s", s, q);
 }
 /**
  * f - returns the largest of 3 numbers
