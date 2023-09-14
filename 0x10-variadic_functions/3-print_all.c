@@ -21,7 +21,7 @@ void g(char *s, va_list a)
  */
 void f(char *s, va_list a)
 {
-	printf("%s%f", s, va_arg(a, double))
+	printf("%s%f", s, va_arg(a, double));
 }
 /**
  * c - returns the largest of 3 numbers
@@ -30,7 +30,7 @@ void f(char *s, va_list a)
  */
 void c(char *s, va_list a)
 {
-	printf("%s%c", s, va_arg(a, int))
+	printf("%s%c", s, va_arg(a, int));
 }
 /**
  * i - returns the largest of 3 numbers
@@ -39,26 +39,42 @@ void c(char *s, va_list a)
  */
 void i(char *s, va_list a)
 {
-	printf("%s%d", s, va_arg(a, int))
+	printf("%s%d", s, va_arg(a, int));
 }
-void print_strings(const char *separator, const unsigned int n, ...)
+/**
+ * print_all - returns the largest of 3 numbers
+ * @format: df
+ * @...: first integ
+ */
+void print_all(const char * const format, ...)
 {
-	int x;
-	char *d;
+	int x = 0, o;
+	char *s = "";
 	va_list a;
 
-	x = n;
-
-	if (!n)
+	uu us[] = {
+		{"c", c},
+		{"i", i},
+		{"f", f},
+		{"s", g},
+		{NULL, NULL}
+	};
+	va_start(a, format);
+	while (format && format[x])
 	{
-		printf("\n");
-		return;
+		o = 0;
+		while (us[o].u)
+		{
+			if (format[x] == us[o].u[0])
+			{
+				us[o].z(s, a);
+				s = ", ";
+			}
+			o++;
+		}
+		x++;
 	}
-	va_start(a, n);
-	while (x--)
-	{
-		printf("%s%s", (d = va_arg(a, char *)) ? d : "(nil)",
-			x ? (separator ? separator : "") : "\n");
-	}
+	printf("\n");
 	va_end(a);
 }
+
