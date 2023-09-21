@@ -2,7 +2,7 @@
 
 /**
  * free_list - returns the largest of 3 numbers
- * @h: first intege
+ * @head: first intege
  * Return: largest number
  */
 
@@ -14,7 +14,7 @@ void free_list(list_t *head)
 	{
 		x = head->next;
 		free(head->str);
-		free (head);
+		free(head);
 		head = x;
 	}
 }
