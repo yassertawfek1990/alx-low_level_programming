@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - returns the largest of 3 numbers
+ * add_nodeint - returns the largest of 3 numbers
  * @head: first intege
  * @n: dkd
  * Return: largest number
