@@ -1,21 +1,26 @@
 #include "lists.h"
 
 /**
- * print_listint - returns the largest of 3 numbers
- * @h: first intege
+ * reverse_listint - returns the largest of 3 numbers
+ * @head: first intege
  * Return: largest number
  */
 
-size_t print_listint(const listint_t *h)
+listint_t *reverse_listint(listint_t **head)
 {
-	size_t x = 0;
-	const listint_t *p = h;
+	listint_t *p = NULL;
+	listint_t *g = NULL;
 
+	if (!head || !*head)
+		return (NULL);
+	p = *head;
+	*head = NULL;
 	while (p != NULL)
 	{
-		printf("%d\n", p->n);
-		p = p->next;
-		x++;
+		g = p->next;
+		p->next = *head;
+		*head = p;
+		p = g;
 	}
-	return (x);
+	return (*head);
 }
