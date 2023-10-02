@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * read_textfile - Reads a text 
+ * read_textfile - Reads a text
  * @filename: A pointer to t
  * @letters: The number of l
  * Return: If the function fails
@@ -9,22 +9,26 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	file *f;
-	char s[letters];
+	int a;
+	size_t b;
+	size_t c;
+	char *s;
 
 	if (!filename)
 		return (0);
-	f = fopen(filename, r);
-	if (!f)
+	s = malloc(sizeof(char) * letters);
+	if (!s)
 		return (0);
-	else
+	a = open(filename, O_RDONLY);
+	b = read(a, s, letters);
+	c = write(STDOUT_FILENO, s, b);
+	if (a == -1 || b == -1 || c == -1 || c != b)
 	{
-		if (fgets(filename, letters, f) != NULL)
-			return (strlen(f));
-		else
-			return (0);
+		free(s);
+		return (0);
 	}
-
-
+	free(s);
+	close(a);
+	return (c);
 
 }
