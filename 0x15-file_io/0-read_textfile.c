@@ -9,15 +9,15 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int a;
+	size_t a;
 	size_t b;
 	size_t c;
 	char *s;
 
-	if (!filename)
+	if (filename == NULL)
 		return (0);
 	s = malloc(sizeof(char) * letters);
-	if (!s)
+	if (s == NULL)
 		return (0);
 	a = open(filename, O_RDONLY);
 	b = read(a, s, letters);
