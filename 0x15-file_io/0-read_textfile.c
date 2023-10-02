@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+
 
 /**
  * read_textfile - Reads a text
@@ -10,9 +10,9 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t a;
-	size_t b;
-	size_t c;
+	int a;
+	ssize_t b;
+	ssize_t c;
 	char *s;
 
 	if (filename == NULL)
