@@ -3,8 +3,9 @@
 
 /**
  * main - Enter program
- *
- * Description: C program prints using printf command
+ * @argc: The number ofsupplied to te program.
+ * @argv: An array of pointers to s.
+ * Description: C program prints using printf ommand
  *
  * Return: always return 0
 */
@@ -18,16 +19,10 @@ int main(int argc, char *argv[])
 	char *s;
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	s = malloc(sizeof(char) * 1024);
 	if (s == NULL)
-	{
-		dprintf(STDERR_FILENO,"Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	f = open(argv[1], O_RDONLY);
 	b = read(f, s, 1024);
 	t = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -39,7 +34,6 @@ int main(int argc, char *argv[])
 			free(s);
 			exit(98);
 		}
-
 		c = write(t, s, b);
 		if (t == -1 || c == -1)
 		{
@@ -48,22 +42,14 @@ int main(int argc, char *argv[])
 			free(s);
 			exit(99);
 		}
-
 		b = read(f, s, 1024);
 		t = open(argv[2], O_WRONLY | O_APPEND);
-
 	} while (b > 0);
 	free(s);
 	if (close(f) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f), exit(100);
 	if (close(t) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", t);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", t), exit(100);
 	return (c);
 
 }
