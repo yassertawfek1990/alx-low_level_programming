@@ -8,7 +8,7 @@
  * Description: C program prints using printf ommand
  *
  * Return: always return 0
-*/
+ */
 
 int main(int argc, char *argv[])
 {
