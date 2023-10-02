@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	}
 	f = open(argv[1], O_RDONLY);
 	b = read(f, s, 1024);
-	t = open(argve[2], O_CREAT | O_WRONLY | O_TRUNC, 0664)
+	t = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	do {
 		if (f == -1 || b == -1)
 		{
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
-			free(c);
+			free(s);
 			exit(99);
 		}
 
