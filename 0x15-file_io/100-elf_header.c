@@ -31,16 +31,16 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		free(h), cl(f);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]), exit(98);
 	}
-	ch(h->i);
+	ch(h->e_ident);
 	printf("ELF Header:\n");
-	print_magic(h->i);
-	print_class(h->i);
-	print_data(h->i);
-	print_version(h->i);
-	print_osabi(h->i);
-	print_abi(h->i);
-	print_type(h->i);
-	print_entry(h->m, h->i);
+	pm(h->e_ident);
+	pc(h->e_ident);
+	pd(h->e_ident);
+	pv(h->e_ident);
+	po(h->e_ident);
+	pa(h->e_ident);
+	pt(h->e_type, h->e_ident);
+	pe(h->e_entry,h->e_ident);
 
 	free(h);
 	cl(f);
@@ -55,7 +55,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 void cl(int ef)
 {
-	if (cl(ef) == -1)
+	if (close(ef) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ef);
 		exit(98);
@@ -105,13 +105,13 @@ void pt(unsigned int t, unsigned char *i)
 void pe(unsigned long int m, unsigned char *i)
 {
 	printf("  Entry point address:               ");
-	if (m[EI_DATA] == ELFDATA2MSB)
+	if (i[EI_DATA] == ELFDATA2MSB)
 	{
 		m = ((m << 8) & 0xFF00FF00) | ((m >> 8) & 0xFF00FF);
 		m = (m << 16) | (m >> 16);
 	}
 
-	if (e_ident[EI_CLASS] == ELFCLASS32)
+	if (i[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)m);
 
 	else
@@ -207,7 +207,7 @@ void pd(unsigned char *i)
 
 void pv(unsigned char *i)
 {
-	printf("  Version:                           %d", e_ident[EI_VERSION]);
+	printf("  Version:                           %d", i[EI_VERSION]);
 	switch (i[EI_VERSION])
 	{
 	case EV_CURRENT:
@@ -278,10 +278,7 @@ void ch(unsigned char *i)
 
 	for (z = 0; z < 4; z++)
 	{
-		if (e_ident[z] != 127 &&
-		    e_ident[z] != 'E' &&
-		    e_ident[z] != 'L' &&
-		    e_ident[z] != 'F')
+		if (i[z] != 127 && i[z] != 'E' && i[z] != 'L' && i[z] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
