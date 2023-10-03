@@ -3,7 +3,7 @@
 /**
  * main - Displays the in
  * @argc: Tts supplied to the program.
- * @argv: An array of pointers 
+ * @argv: An array of pointers
  * Return: 0
  * Description: If the file is not an ELF File
  */
@@ -40,7 +40,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	po(h->e_ident);
 	pa(h->e_ident);
 	pt(h->e_type, h->e_ident);
-	pe(h->e_entry,h->e_ident);
+	pe(h->e_entry, h->e_ident);
 
 	free(h);
 	cl(f);
