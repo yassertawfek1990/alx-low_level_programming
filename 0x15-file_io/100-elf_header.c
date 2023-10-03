@@ -1,83 +1,290 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <elf.h>
+#include "main.h"
 
-#define BUFFER_SIZE 64
+/**
+ * main - Displays the in
+ * @argc: Tts supplied to the program.
+ * @argv: An array of pointers 
+ * Return: 0
+ * Description: If the file is not an ELF File
+ */
 
-int main(int argc, char *argv[]) {
-  int fd;
-  Elf64_Ehdr header;
-  char buffer[BUFFER_SIZE];
-  
-  if (argc != 2) {
-    fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
-    exit(98);
-  }
+int main(int __attribute__((__unused__)) argc, char *argv[])
+{
+	Elf64_Ehdr *h;
+	int f, k;
 
-  fd = open(argv[1], O_RDONLY);
-  if (fd == -1) {
-    perror("Error opening file");
-    exit(98);
-  }
+	f = open(argv[1], O_RDONLY);
+	if (f == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
+		exit(98);
+	}
+	h = malloc(sizeof(Elf64_Ehdr));
+	if (h == NULL)
+	{
+		cl(f);
+		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]), exit(98);
+	}
+	k = read(f, h, sizeof(Elf64_Ehdr));
+	if (k == -1)
+	{
+		free(h), cl(f);
+		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]), exit(98);
+	}
+	ch(h->i);
+	printf("ELF Header:\n");
+	print_magic(h->i);
+	print_class(h->i);
+	print_data(h->i);
+	print_version(h->i);
+	print_osabi(h->i);
+	print_abi(h->i);
+	print_type(h->i);
+	print_entry(h->m, h->i);
 
-  read(fd, &header, sizeof(header));
+	free(h);
+	cl(f);
+	return (0);
+}
 
-  printf("ELF Header:\n");
-  printf("  Magic:   %02x %02x %02x %02x\n", 
-        header.e_ident[EI_MAG0],
-        header.e_ident[EI_MAG1],
-        header.e_ident[EI_MAG2],
-        header.e_ident[EI_MAG3]);  
+/**
+ * cl - Clole.
+ * @ef: The r of the ELF file
+ * Description: If the 98.
+ */
 
-  printf("  Class:                           ");
-  switch (header.e_ident[EI_CLASS]) {
-  case ELFCLASS32: printf("ELF32\n"); break;
-  case ELFCLASS64: printf("ELF64\n"); break;
-  default: printf("<unknown: %x>\n", header.e_ident[EI_CLASS]);
-  }
+void cl(int ef)
+{
+	if (cl(ef) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ef);
+		exit(98);
+	}
+}
 
-  printf("  Data:                            ");
-  switch (header.e_ident[EI_DATA]) {
-  case ELFDATA2LSB: printf("2's complement, little endian\n"); break;
-  case ELFDATA2MSB: printf("2's complement, big endian\n"); break;
-  default: printf("<unknown: %x>\n", header.e_ident[EI_DATA]);
-  }  
+/**
+ * pt - Prder.
+ * @t: he ype.
+ * @i: p to
+ * Description: If the 98.
+ */
+void pt(unsigned int t, unsigned char *i)
+{
+	if (i[EI_DATA] == ELFDATA2MSB)
+		t >>= 8;
+	printf("  Type:                              ");
+	switch (t)
+	{
+	case ET_NONE:
+		printf("NONE (None)\n");
+		break;
+	case ET_REL:
+		printf("REL (Relocatable file)\n");
+		break;
+	case ET_EXEC:
+		printf("EXEC (Executable file)\n");
+		break;
+	case ET_DYN:
+		printf("DYN (Shared object file)\n");
+		break;
+	case ET_CORE:
+		printf("CORE (Core file)\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", t);
+	}
+}
 
-  printf("  Version:                         %d (current)\n", header.e_ident[EI_VERSION]);
-  
-  printf("  OS/ABI:                          ");
-  switch (header.e_ident[EI_OSABI]) {
-    case ELFOSABI_NONE: printf("UNIX - System V\n"); break;
-    case ELFOSABI_HPUX: printf("UNIX - HP-UX\n"); break;
-    case ELFOSABI_NETBSD: printf("UNIX - NetBSD\n"); break;
-    case ELFOSABI_LINUX: printf("UNIX - Linux\n"); break;
-    case ELFOSABI_SOLARIS: printf("UNIX - Solaris\n"); break;
-    case ELFOSABI_IRIX: printf("UNIX - IRIX\n"); break;
-    case ELFOSABI_FREEBSD: printf("UNIX - FreeBSD\n"); break; 
-    case ELFOSABI_TRU64: printf("UNIX - TRU64\n"); break;
-    case ELFOSABI_ARM: printf("ARM\n"); break;
-    case ELFOSABI_STANDALONE: printf("Standalone App\n"); break;
-    default: printf("<unknown: %x>\n", header.e_ident[EI_OSABI]);
-  }
+/**
+ * pe - Prieader.
+ * @m: The
+ * @i: theass.
+ * Description: If the 98.
+ */
 
-  printf("  ABI Version:                     %d\n", header.e_ident[EI_ABIVERSION]);
+void pe(unsigned long int m, unsigned char *i)
+{
+	printf("  Entry point address:               ");
+	if (m[EI_DATA] == ELFDATA2MSB)
+	{
+		m = ((m << 8) & 0xFF00FF00) | ((m >> 8) & 0xFF00FF);
+		m = (m << 16) | (m >> 16);
+	}
 
-  printf("  Type:                            ");
-  switch (header.e_type) {
-  case ET_REL: printf("REL (Relocatable file)\n"); break;
-  case ET_EXEC: printf("EXEC (Executable file)\n"); break;
-  case ET_DYN: printf("DYN (Shared object file)\n"); break;
-  case ET_CORE: printf("CORE (Core file)\n"); break;
-  default: printf("<unknown: %x>\n", header.e_type);
-  }
+	if (e_ident[EI_CLASS] == ELFCLASS32)
+		printf("%#x\n", (unsigned int)m);
 
-  printf("  Entry point address:             0x%lx\n", header.e_entry);
-  
-  close(fd);
+	else
+		printf("%#lx\n", m);
+}
 
-  return 0;
+/**
+ * po - Priader.
+ * @i: Ainterersion.
+ * Description: If the 98.
+ */
+void po(unsigned char *i)
+{
+	printf("  OS/ABI:                            ");
+	switch (i[EI_OSABI])
+	{
+	case ELFOSABI_NONE:
+		printf("UNIX - System V\n");
+		break;
+	case ELFOSABI_HPUX:
+		printf("UNIX - HP-UX\n");
+		break;
+	case ELFOSABI_NETBSD:
+		printf("UNIX - NetBSD\n");
+		break;
+	case ELFOSABI_LINUX:
+		printf("UNIX - Linux\n");
+		break;
+	case ELFOSABI_SOLARIS:
+		printf("UNIX - Solaris\n");
+		break;
+	case ELFOSABI_IRIX:
+		printf("UNIX - IRIX\n");
+		break;
+	case ELFOSABI_FREEBSD:
+		printf("UNIX - FreeBSD\n");
+		break;
+	case ELFOSABI_TRU64:
+		printf("UNIX - TRU64\n");
+		break;
+	case ELFOSABI_ARM:
+		printf("ARM\n");
+		break;
+	case ELFOSABI_STANDALONE:
+		printf("Standalone App\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", i[EI_OSABI]);
+	}
+}
+
+/**
+ * pa - Prin.
+ * @i: Asion.
+ * Description: If the 98.
+ */
+
+void pa(unsigned char *i)
+{
+	printf("  ABI Version:                       %d\n", i[EI_ABIVERSION]);
+}
+
+/**
+ * pd - Printsader.
+ * @i: A pointeclass.
+ * Description: If the 98.
+ */
+
+void pd(unsigned char *i)
+{
+	printf("  Data:                              ");
+	switch (i[EI_DATA])
+	{
+	case ELFDATANONE:
+		printf("none\n");
+		break;
+	case ELFDATA2LSB:
+		printf("2's complement, little endian\n");
+		break;
+	case ELFDATA2MSB:
+		printf("2's complement, big endian\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", i[EI_CLASS]);
+	}
+}
+
+/**
+ * pv - Prinr.
+ * @i: A pointersion.
+ * Description: If the 98.
+ */
+
+void pv(unsigned char *i)
+{
+	printf("  Version:                           %d", e_ident[EI_VERSION]);
+	switch (i[EI_VERSION])
+	{
+	case EV_CURRENT:
+		printf(" (current)\n");
+		break;
+	default:
+		printf("\n");
+		break;
+	}
+}
+
+/**
+ * pm - Printeader.
+ * @i: A poiners.
+ * Description: Magies.
+ */
+
+void pm(unsigned char *i)
+{
+	int z;
+
+	printf("  Magic:   ");
+	for (z = 0; z < EI_NIDENT; z++)
+	{
+		printf("%02x", i[z]);
+		if (z == EI_NIDENT - 1)
+			printf("\n");
+		else
+			printf(" ");
+	}
+}
+
+/**
+ * pc - Prilheader.
+ * @i: A pointss.
+ * Description: If the 98.
+ */
+
+void pc(unsigned char *i)
+{
+	printf("  Class:                             ");
+
+	switch (i[EI_CLASS])
+	{
+	case ELFCLASSNONE:
+		printf("none\n");
+		break;
+	case ELFCLASS32:
+		printf("ELF32\n");
+		break;
+	case ELFCLASS64:
+		printf("ELF64\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", i[EI_CLASS]);
+	}
+}
+
+/**
+ * ch - Checiile.
+ * @i: A pnter to an ar.
+ * Description: Ife 98.
+ */
+
+void ch(unsigned char *i)
+{
+	int z;
+
+	for (z = 0; z < 4; z++)
+	{
+		if (e_ident[z] != 127 &&
+		    e_ident[z] != 'E' &&
+		    e_ident[z] != 'L' &&
+		    e_ident[z] != 'F')
+		{
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+			exit(98);
+		}
+	}
 }
