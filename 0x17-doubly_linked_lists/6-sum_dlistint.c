@@ -3,14 +3,13 @@
 /**
  * sum_dlistint - s
  * @head: doubl
- * @index: ind
  * Return: if the no
  */
 
 int sum_dlistint(dlistint_t *head)
 {
 	dlistint_t *c;
-	unsigned int x;
+	int x;
 
 	if (!head)
 		return (0);
