@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- * print_dlistint - pr_t list.
+ * dlistint_len - pr_t list.
  * @h: pointer
  * Return: numbe
  */
 
-size_t print_dlistint(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 
 	int c;
@@ -18,7 +18,6 @@ size_t print_dlistint(const dlistint_t *h)
 		h = h->prev;
 	while (h != NULL)
 	{
-		printf("%d\n", h->n);
 		h = h->next;
 		c = c + 1;
 	}
