@@ -183,7 +183,7 @@ void shash_table_delete(shash_table_t *ht)
 		free(n->key);
 		free(n->value);
 		free(n);
-		no = t;
+		n = t;
 	}
 
 	free(h->array);
