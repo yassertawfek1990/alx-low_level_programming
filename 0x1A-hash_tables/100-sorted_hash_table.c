@@ -32,10 +32,9 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *t;
+	shash_node_t *t, *n;
 	char *v;
 	unsigned long int i;
-	shash_node_t *n;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
@@ -70,7 +69,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	n->value = v;
 	n->next = ht->array[i];
 	ht->array[i] = n;
-
 	if (ht->shead == NULL)
 	{
 		n->sprev = NULL;
