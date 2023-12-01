@@ -43,6 +43,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	n->value = v;
 	n->next = ht->array[x];
-	ht->array[index] = n;
+	ht->array[x] = n;
 	return (1);
 }
